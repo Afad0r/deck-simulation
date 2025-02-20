@@ -1,0 +1,4706 @@
+[
+  {
+    "id": "001",
+    "name": "Bulbasaur",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Vine Whip",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "002",
+    "name": "Ivysaur",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "001",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "energyCost": {"Grass": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "003",
+    "name": "Venusaur",
+    "cardType": "Pokemon",
+    "hp": 160,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "002",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Mega Drain",
+        "energyCost": {"Grass": 2, "Normal": 2},
+        "damage": 80,
+        "effect": {
+          "type": "heal",
+          "amount": 30,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "004",
+    "name": "Venusaur ex",
+    "cardType": "Pokemon",
+    "hp": 190,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "002",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "energyCost": {"Grass": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      },
+      {
+        "name": "Giant Bloom",
+        "energyCost": {"Grass": 2, "Normal": 2},
+        "damage": 100,
+        "effect": {
+          "type": "heal",
+          "amount": 30,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "005",
+    "name": "Caterpie",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Find a Friend",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "searchDeck",
+          "criteria": {"cardType": "Pokemon", "type": "Grass"},
+          "quantity": 1,
+          "bench": false
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "006",
+    "name": "Metapod",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "005",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bug Bite",
+        "energyCost": {"Normal": 2},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "007",
+    "name": "Butterfree",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "006",
+    "ability": {
+      "isActivePokemon": false,
+      "timesUsable": 1,
+      "effect": {
+        "type": "heal",
+        "amount": 20,
+        "affectedPokemon": "all"
+      }
+    },
+    "moves": [
+      {
+        "name": "Gust",
+        "energyCost": {"Grass": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "008",
+    "name": "Weedle",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Sting",
+        "energyCost": {"Grass": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "009",
+    "name": "Kakuna",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "008",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bug Bite",
+        "energyCost": {"Grass": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "010",
+    "name": "Beedrill",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "009",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Sharp Sting",
+        "energyCost": {"Grass": 1},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "011",
+    "name": "Oddish",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ram",
+        "energyCost": {"Grass": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "012",
+    "name": "Gloom",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "011",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Drool",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "013",
+    "name": "Vileplume",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "012",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Soothing Scent",
+        "energyCost": {"Grass": 2, "Normal": 1},
+        "damage": 80,
+        "effect": {
+          "type": "sleep",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "014",
+    "name": "Paras",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Scratch",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "015",
+    "name": "Parasect",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "014",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Slash",
+        "energyCost": {"Grass": 2, "Normal": 1},
+        "damage": 80,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "016",
+    "name": "Venonat",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Grass": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "017",
+    "name": "Venomoth",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "016",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Poison Powder",
+        "energyCost": {"Grass": 1},
+        "damage": 30,
+        "effect": {
+          "type": "poison",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "018",
+    "name": "Bellsprout",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Vine Whip",
+        "energyCost": {"Grass": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "019",
+    "name": "Weepinbell",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "018",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "020",
+    "name": "Victreebel",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Grass",
+    "evolutionStage": 2,
+    "evolvesFrom": "019",
+    "ability": {
+      "isActivePokemon": true,
+      "timesUsable": 1,
+      "effect": {
+        "type": "switchOpponentActivePokemon",
+        "choose": true
+      }
+    },
+    "moves": [
+      {
+        "name": "Vine Whip",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "021",
+    "name": "Exeggcute",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Seed Bomb",
+        "energyCost": {"Grass": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "022",
+    "name": "Exeggutor",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "021",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Stomp",
+        "energyCost": {"Grass": 1},
+        "damage": 30,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 30,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "023",
+    "name": "Exeggutor ex",
+    "cardType": "Pokemon",
+    "hp": 160,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "021",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tropical Swing",
+        "energyCost": {"Grass": 1},
+        "damage": 40,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 40,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "024",
+    "name": "Tangela",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Absorb",
+        "energyCost": {"Grass": 1, "Normal": 1},
+        "damage": 40,
+        "effect": {
+          "type": "heal",
+          "amount": 10,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "025",
+    "name": "Scyther",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Sharp Scythe",
+        "energyCost": {"Grass": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "026",
+    "name": "Pinsir",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Double Horn",
+        "energyCost": {"Grass": 2},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 50,
+          "chance": 0.5,
+          "times": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "027",
+    "name": "Cottonee",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Attach",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "028",
+    "name": "Whimsicott",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "027",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Rolling Tackle",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "029",
+    "name": "Petilil",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Blot",
+        "energyCost": {"Grass": 1},
+        "damage": 10,
+        "effect": {
+          "type": "heal",
+          "amount": 10,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "030",
+    "name": "Lilligant",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "029",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Leaf Supply",
+        "energyCost": {"Grass": 2},
+        "damage": 50,
+        "effect": {
+          "type": "energyTransfer",
+          "energyType": "Grass",
+          "amount": 1,
+          "times": 1,
+          "affectedPokemon": "bench"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "031",
+    "name": "Skiddo",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Grass",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Surprise Attack",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 40,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "032",
+    "name": "Gogoat",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Grass",
+    "evolutionStage": 1,
+    "evolvesFrom": "031",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "energyCost": {"Grass": 1, "Normal": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "033",
+    "name": "Charmander",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ember",
+        "energyCost": {"Fire": 1},
+        "damage": 30,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "034",
+    "name": "Charmeleon",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "033",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fire Claws",
+        "energyCost": {"Fire": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "035",
+    "name": "Charizard",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Fire",
+    "evolutionStage": 2,
+    "evolvesFrom": "034",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fire Spin",
+        "energyCost": {"Fire": 2, "Normal": 2},
+        "damage": 150,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "036",
+    "name": "Charizard ex",
+    "cardType": "Pokemon",
+    "hp": 180,
+    "type": "Fire",
+    "evolutionStage": 2,
+    "evolvesFrom": "034",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Slash",
+        "energyCost": {"Fire": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      },
+      {
+        "name": "Crimson Storm",
+        "energyCost": {"Fire": 2, "Normal": 2},
+        "damage": 200,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "037",
+    "name": "Vulpix",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tail Whip",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "canAttack",
+          "affectedPokemon": "opponentActive",
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "038",
+    "name": "Ninetales",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "037",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flamethrower",
+        "energyCost": {"Fire": 2},
+        "damage": 90,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "039",
+    "name": "Growlithe",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bite",
+        "energyCost": {"Normal": 2},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "040",
+    "name": "Arcanine",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "039",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Heat Tackle",
+        "energyCost": {"Fire": 2, "Normal": 1},
+        "damage": 100,
+        "effect": {
+          "type": "damageReflected",
+          "amount": 20,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "041",
+    "name": "Arcanine ex",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "039",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Inferno Onrush",
+        "energyCost": {"Fire": 2, "Normal": 1},
+        "damage": 120,
+        "effect": {
+          "type": "damageReflected",
+          "amount": 20,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "042",
+    "name": "Ponyta",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flare",
+        "energyCost": {"Fire": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "043",
+    "name": "Rapidash",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "042",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fire Mane",
+        "energyCost": {"Fire": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "044",
+    "name": "Magmar",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Magma Punch",
+        "energyCost": {"Fire": 2},
+        "damage": 50,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "045",
+    "name": "Flareon",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "206",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flamethrower",
+        "energyCost": {"Fire": 1, "Normal": 2},
+        "damage": 110,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "046",
+    "name": "Moltres",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Sky Attack",
+        "energyCost": {"Fire": 1, "Normal": 2},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 130,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "047",
+    "name": "Moltres ex",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Inferno Dance",
+        "energyCost": {"Fire": 1},
+        "damage": 0,
+        "effect": {
+          "type": "energyTransfer",
+          "energyType": "Fire",
+          "amount": 1,
+          "chance": 0.5,
+          "times": 3,
+          "affectedPokemon": "bench"
+        }
+      },
+      {
+        "name": "Heat Blast",
+        "energyCost": {"Fire": 1, "Normal": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "048",
+    "name": "Heatmor",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Combustion",
+        "energyCost": {"Fire": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "049",
+    "name": "Salandit",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Scratch",
+        "energyCost": {"Fire": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "050",
+    "name": "Salazzle",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "049",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fire Claws",
+        "energyCost": {"Fire": 1, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "051",
+    "name": "Sizzlipede",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fire",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gnaw",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "052",
+    "name": "Centiskorch",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Fire",
+    "evolutionStage": 1,
+    "evolvesFrom": "051",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fire Blast",
+        "energyCost": {"Fire": 1, "Normal": 3},
+        "damage": 130,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Water"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "053",
+    "name": "Squirtle",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Gun",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "054",
+    "name": "Wartortle",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "053",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Wave Splash",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "055",
+    "name": "Blastoise",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Water",
+    "evolutionStage": 2,
+    "evolvesFrom": "054",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Hydro Pump",
+        "energyCost": {"Water": 2, "Normal": 1},
+        "damage": 80,
+        "effect": {
+          "type": "extraEnergyDamage",
+          "extraEnergyType": {"Water": 2},
+          "extraDamage": 60
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "056",
+    "name": "Blastoise ex",
+    "cardType": "Pokemon",
+    "hp": 180,
+    "type": "Water",
+    "evolutionStage": 2,
+    "evolvesFrom": "054",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Surf",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      },
+      {
+        "name": "Hydro Bazooka",
+        "energyCost": {"Water": 2, "Normal": 1},
+        "damage": 100,
+        "effect": {
+          "type": "extraEnergyDamage",
+          "extraEnergyType": {"Water": 2},
+          "extraDamage": 60
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "057",
+    "name": "Psyduck",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Headache",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": {
+          "type": "stopSupport"
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "058",
+    "name": "Golduck",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "057",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Aqua Edge",
+        "energyCost": {"Water": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "059",
+    "name": "Poliwag",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Razor Fin",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "060",
+    "name": "Poliwhirl",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "059",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Surf",
+        "energyCost": {"Normal": 2},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "061",
+    "name": "Poliwrath",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Water",
+    "evolutionStage": 2,
+    "evolvesFrom": "060",
+    "ability": {
+      "isActivePokemon": true,
+      "effect": {
+        "type": "counterMeasure",
+        "amount": 20
+      }
+    },
+    "moves": [
+      {
+        "name": "Mega Punch",
+        "energyCost": {"Water": 1, "Normal": 2},
+        "damage": 80,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "062",
+    "name": "Tentacool",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gentle Slap",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "063",
+    "name": "Tentacruel",
+    "cardType": "Pokemon",
+    "hp": 110,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "062",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Poison Tentacles",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 50,
+        "effect": {
+          "type": "poison",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "064",
+    "name": "Seel",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Headbutt",
+        "energyCost": {"Normal": 2},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "065",
+    "name": "Dewgong",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "064",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Surf",
+        "energyCost": {"Water": 3},
+        "damage": 90,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "066",
+    "name": "Shellder",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tongue Slap",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "067",
+    "name": "Cloyster",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "067",
+    "ability": {
+      "isActivePokemon": true,
+      "effect": {
+        "type": "takeLessDamage",
+        "amount": 10
+      }
+    },
+    "moves": [
+      {
+        "name": "Surf",
+        "energyCost": {"Water": 2, "Normal": 1},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "068",
+    "name": "Krabby",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Vise Grip",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "069",
+    "name": "Kingler",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "068",
+    "ability": null,
+    "moves": [
+      {
+        "name": "KO Crab",
+        "energyCost": {"Water": 2, "Normal": 1},
+        "damage": 80,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 80,
+          "chance": 0.25
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "070",
+    "name": "Horsea",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Gun",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "071",
+    "name": "Seadra",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "070",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Arrow",
+        "energyCost": {"Water": 3},
+        "damage": 0,
+        "effect": {
+          "type": "attackSpecificPokemon",
+          "amount": 50
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "072",
+    "name": "Goldeen",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flop",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "073",
+    "name": "Seaking",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "072",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Horn Hazard",
+        "energyCost": {"Water": 1},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 80,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "074",
+    "name": "Staryu",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Smack",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "075",
+    "name": "Starmie",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "075",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Splash",
+        "energyCost": {"Water": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 0}
+  },
+  {
+    "id": "076",
+    "name": "Starmie ex",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "075",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Hydro Splash",
+        "energyCost": {"Water": 2},
+        "damage": 90,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 0}
+  },
+  {
+    "id": "077",
+    "name": "Magikarp",
+    "cardType": "Pokemon",
+    "hp": 30,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Splash",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "078",
+    "name": "Gyarados",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "077",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Hyper Beam",
+        "energyCost": {"Water": 4},
+        "damage": 100,
+        "effect": {
+          "type": "opponentEnergyDiscard",
+          "target": "active",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "079",
+    "name": "Lapras",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Hydro Pump",
+        "energyCost": {"Water": 1},
+        "damage": 20,
+        "effect": {
+          "type": "extraEnergyDamage",
+          "extraEnergyType": {"Water": 3},
+          "extraDamage": 70
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "080",
+    "name": "Vaporeon",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "206",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bubble Drain",
+        "energyCost": {"Water": 1, "Normal": 3},
+        "damage": 60,
+        "effect": {
+          "type": "heal",
+          "amount": 30,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "081",
+    "name": "Omanyte",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "216",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Gun",
+        "energyCost": {"Water": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "082",
+    "name": "Omaster",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Water",
+    "evolutionStage": 2,
+    "evolvesFrom": "081",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ancient Whirlpool",
+        "energyCost": {"Water": 1, "Normal": 2},
+        "damage": 70,
+        "effect": {
+          "type": "canAttack",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "083",
+    "name": "Articuno",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ice Beam",
+        "energyCost": {"Water": 2, "Normal": 1},
+        "damage": 60,
+        "effect": {
+          "type": "paralyse",
+          "affectedPokemon": "opponentActive",
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "084",
+    "name": "Articuno ex",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ice Wing",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      },
+      {
+        "name": "Blizzard",
+        "energyCost": {"Water": 3},
+        "damage": 80,
+        "effect": {
+          "type": "benchAttack",
+          "amount": 10
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "085",
+    "name": "Ducklett",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flap",
+        "energyCost": {"Normal": 2},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "086",
+    "name": "Swanna",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "085",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Wing Attack",
+        "energyCost": {"Normal": 3},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "087",
+    "name": "Froakie",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Flop",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "088",
+    "name": "Frogadier",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "087",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Water Drip",
+        "energyCost": {"Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "089",
+    "name": "Greninja",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Water",
+    "evolutionStage": 2,
+    "evolvesFrom": "088",
+    "ability": {
+      "isActivePokemon": false,
+      "type": "attackSpecificPokemon",
+      "amount": 20
+    },
+    "moves": [
+      {
+        "name": "Mist Slash",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "090",
+    "name": "Pyukumuku",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Rain Splash",
+        "energyCost": {"Water": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "091",
+    "name": "Bruxish",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Second Strike",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 10,
+        "effect": {
+          "opponentHasDamage": true,
+          "amount": 60
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "092",
+    "name": "Snom",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Water",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ram",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Metal"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "093",
+    "name": "Frosmoth",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Water",
+    "evolutionStage": 1,
+    "evolvesFrom": "092",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Powder Snow",
+        "energyCost": {"Water": 1, "Normal": 1},
+        "damage": 40,
+        "effect": {
+          "type": "sleep",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Metal"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "094",
+    "name": "Pikachu",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gnaw",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "095",
+    "name": "Raichu",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "094",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Thunderbolt",
+        "energyCost": {"Electric": 3},
+        "damage": 140,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Fire",
+          "amount": "all"
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "096",
+    "name": "Pikachu ex",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Circle Circuit",
+        "energyCost": {"Electric": 2},
+        "damage": 0,
+        "effect": {
+          "type": "benchDependent",
+          "benchType": "Electric",
+          "amount": 30
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "097",
+    "name": "Magnemite",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Lightning Ball",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "098",
+    "name": "Magneton",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "097",
+    "ability": {
+      "type": "energyTransfer",
+      "energyType": "Electric",
+      "amount": 1,
+      "times": 1,
+      "affectedPokemon": "active"
+    },
+    "moves": [
+      {
+        "name": "Spinning Attack",
+        "energyCost": {"Electric": 1, "Normal": 3},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "099",
+    "name": "Voltorb",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "100",
+    "name": "Electrode",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "099",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Electro Ball",
+        "energyCost": {"Electric": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 0}
+  },
+  {
+    "id": "101",
+    "name": "Electabuzz",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Thunder Punch",
+        "energyCost": {"Electric": 2},
+        "damage": 40,
+        "effect": {
+          "chance": 0.5,
+          "addDamage": 40,
+          "selfDamage": 20
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "102",
+    "name": "Jolteon",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "206",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Pin Missile",
+        "energyCost": {"Electric": 1, "Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 40,
+          "chance": 0.5,
+          "times": 4
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "103",
+    "name": "Zapdos",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Raging Thunder",
+        "energyCost": {"Electric": 2, "Normal": 1},
+        "damage": 100,
+        "effect": {
+          "type": "damageReflected",
+          "amount": 30,
+          "affectedPokemon": "bench"
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "104",
+    "name": "Zapdos ex",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Peck",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      },
+      {
+        "name": "Thundering Hurricane",
+        "energyCost": {"Electric": 3},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 50,
+          "chance": 0.5,
+          "times": 4
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "105",
+    "name": "Blitzle",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Zap Kick",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "106",
+    "name": "Zebstrika",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "105",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Thunder Spear",
+        "energyCost": {"Electric": 1},
+        "damage": 0,
+        "effect": {
+          "type": "attackSpecificPokemon",
+          "amount": 30
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "107",
+    "name": "Tynamo",
+    "cardType": "Pokemon",
+    "hp": 30,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tiny Charge",
+        "energyCost": {"Electric": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "108",
+    "name": "Eelektrik",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "107",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Head Bolt",
+        "energyCost": {"Electric": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "109",
+    "name": "Eelektross",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Electric",
+    "evolutionStage": 2,
+    "evolvesFrom": "108",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Thunder Fang",
+        "energyCost": {"Electric": 2, "Normal": 1},
+        "damage": 80,
+        "effect": {
+          "type": "paralyse",
+          "affectedPokemon": "opponentActive",
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "110",
+    "name": "Helioptile",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tail Whap",
+        "energyCost": {"Electric": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "111",
+    "name": "Heliolisk",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Electric",
+    "evolutionStage": 1,
+    "evolvesFrom": "110",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Quick Attack",
+        "energyCost": {"Normal": 2},
+        "damage": 80,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 40,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "112",
+    "name": "Pincurchin",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Electric",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Thunder Shock",
+        "energyCost": {"Electric": 2},
+        "damage": 30,
+        "effect": {
+          "type": "paralyse",
+          "affectedPokemon": "opponentActive",
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "113",
+    "name": "Clefairy",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Slap",
+        "energyCost": {"Psychic": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Metal"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "114",
+    "name": "Clefable",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "113",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Magical Shot",
+        "energyCost": {"Psychic": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Metal"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "115",
+    "name": "Abra",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Teleport",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "switchActivePokemon"
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "116",
+    "name": "Kadabra",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "115",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Super Psy Bolt",
+        "energyCost": {"Psychic": 1, "Normal": 2},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "117",
+    "name": "Alakazam",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Psychic",
+    "evolutionStage": 2,
+    "evolvesFrom": "116",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Psychic",
+        "energyCost": {"Psychic": 1, "Normal": 2},
+        "damage": 60,
+        "effect": {
+          "type": "opponentActiveEnergyCount",
+          "amount": 30
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "118",
+    "name": "Slowpoke",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tail Whap",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "119",
+    "name": "Slowbro",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "118",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Super Psy Bolt",
+        "energyCost": {"Psychic": 2, "Normal": 1},
+        "damage": 80,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "120",
+    "name": "Gastly",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Suffocating Gas",
+        "energyCost": {"Psychic": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "121",
+    "name": "Haunter",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "120",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Will-O-Wisp",
+        "energyCost": {"Psychic": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "122",
+    "name": "Gengar",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Psychic",
+    "evolutionStage": 2,
+    "evolvesFrom": "121",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bother",
+        "energyCost": {"Psychic": 1},
+        "damage": 50,
+        "effect": {
+          "type": "stopSupport"
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "123",
+    "name": "Gengar ex",
+    "cardType": "Pokemon",
+    "hp": 170,
+    "type": "Psychic",
+    "evolutionStage": 2,
+    "evolvesFrom": "121",
+    "ability": {
+      "isActivePokemon": true,
+      "type": "stopSupport"
+    },
+    "moves": [
+      {
+        "name": "Spooky Shot",
+        "energyCost": {"Psychic": 3},
+        "damage": 100,
+        "effect": {
+          "type": "stopSupport"
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "124",
+    "name": "Drowzee",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Mumble",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "125",
+    "name": "Hypno",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "124",
+    "ability": {
+      "isActivePokemon": false,
+      "times": 1,
+      "type": "sleep",
+      "chance": 0.5
+    },
+    "moves": [
+      {
+        "name": "Psypunch",
+        "energyCost": {"Psychic": 2, "Normal": 1},
+        "damage": 50,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "126",
+    "name": "Mr. Mime",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Barrier Attack",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 30,
+        "effect": {
+          "type": "takeLessDamage",
+          "amount": 20
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "127",
+    "name": "Jynx",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Psychic",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 30,
+        "effect": {
+          "type": "opponentActiveEnergyCount",
+          "amount": 20
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "128",
+    "name": "Mewtwo",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Power Blast",
+        "energyCost": {"Psychic": 2, "Normal": 2},
+        "damage": 120,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Psychic",
+          "amount": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "129",
+    "name": "Mewtwo ex",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Psychic Sphere",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 50,
+        "effect": null
+      },
+      {
+        "name": "Psydrive",
+        "energyCost": {"Psychic": 2, "Normal": 2},
+        "damage": 120,
+        "effect": {
+          "type": "energyDiscard",
+          "energyType": "Psychic",
+          "amount": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "130",
+    "name": "Ralts",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ram",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "131",
+    "name": "Kirlia",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "130",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Smack",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "132",
+    "name": "Gardevoir",
+    "cardType": "Pokemon",
+    "hp": 110,
+    "type": "Psychic",
+    "evolutionStage": 2,
+    "evolvesFrom": "131",
+    "ability": {
+      "isActivePokemon": false,
+      "type": "energyTransfer",
+      "energyType": "Psychic",
+      "amount": 1,
+      "times": 1,
+      "affectedPokemon": "active"
+    },
+    "moves": [
+      {
+        "name": "Psyshot",
+        "energyCost": {"Psychic": 2, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "133",
+    "name": "Woobat",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gnaw",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "134",
+    "name": "Swoobat",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "133",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Heart Stamp",
+        "energyCost": {"Psychic": 1, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "135",
+    "name": "Golett",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Psychic",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Mega Punch",
+        "energyCost": {"Psychic": 1, "Normal": 2},
+        "damage": 50,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "136",
+    "name": "Golurk",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Psychic",
+    "evolutionStage": 1,
+    "evolvesFrom": "135",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Double Lariat",
+        "energyCost": {"Psychic": 2, "Normal": 2},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 100,
+          "chance": 0.5,
+          "times": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Dark"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "137",
+    "name": "Sandshrew",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Scratch",
+        "energyCost": {"Fighting": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "138",
+    "name": "Sandslash",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "137",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Slash",
+        "energyCost": {"Fighting": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "139",
+    "name": "Diglett",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Mud Slap",
+        "energyCost": {"Fighting": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "140",
+    "name": "Dugtrio",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "139",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Dig",
+        "energyCost": {"Fighting": 1},
+        "damage": 40,
+        "effect": {
+          "type": "protectPokemon"
+        }
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "141",
+    "name": "Mankey",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Low Kick",
+        "energyCost": {"Fighting": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "142",
+    "name": "Primeape",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "141",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Fight Back",
+        "energyCost": {"Fighting": 2},
+        "damage": 40,
+        "effect": {
+          "type": "hasDamage",
+          "extraDamage": 60
+        }
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "143",
+    "name": "Machop",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Knuckle Punch",
+        "energyCost": {"Fighting": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "144",
+    "name": "Machoke",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "143",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Strength",
+        "energyCost": {"Fighting": 2},
+        "damage": 50,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "145",
+    "name": "Machamp",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Fighting",
+    "evolutionStage": 2,
+    "evolvesFrom": "144",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Seismic Toss",
+        "energyCost": {"Fighting": 3},
+        "damage": 100,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "146",
+    "name": "Machamp ex",
+    "cardType": "Pokemon",
+    "hp": 180,
+    "type": "Fighting",
+    "evolutionStage": 2,
+    "evolvesFrom": "144",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Mega Punch",
+        "energyCost": {"Fighting": 3},
+        "damage": 120,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 3}
+  },
+  
+  {
+    "id": "147",
+    "name": "Geodude",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Fighting": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "148",
+    "name": "Graveler",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "147",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Rollout",
+        "energyCost": {"Fighting": 1, "Normal": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "149",
+    "name": "Golem",
+    "cardType": "Pokemon",
+    "hp": 160,
+    "type": "Fighting",
+    "evolutionStage": 2,
+    "evolvesFrom": "148",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Double-Edge",
+        "energyCost": {"Fighting": 2},
+        "damage": 150,
+        "effect": {
+          "type": "damageReflected",
+          "amount": 50,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "150",
+    "name": "Onix",
+    "cardType": "Pokemon",
+    "hp": 110,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Land Crush",
+        "energyCost": {"Fighting": 3},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "151",
+    "name": "Cubone",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Growl",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+        "type": "takeLessDamage",
+        "amount": 20
+      }
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "152",
+    "name": "Marowak",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "151",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bone Beatdown",
+        "energyCost": {"Fighting": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "153",
+    "name": "Marowak ex",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "151",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bonemerang",
+        "energyCost": {"Fighting": 2},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 80,
+          "chance": 0.5,
+          "times": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "154",
+    "name": "Hitmonlee",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Stretch Kick",
+        "energyCost": {"Fighting": 1},
+        "damage": 0,
+        "effect": {
+          "type": "attackSpecificBenchPokemon",
+          "amount": 30
+        }
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "155",
+    "name": "Hitmonchan",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Jab",
+        "energyCost": {"Fighting": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "156",
+    "name": "Rhyhorn",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Fighting": 2, "Normal": 1},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "157",
+    "name": "Rhydon",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "156",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Horn Drill",
+        "energyCost": {"Fighting": 3, "Normal": 1},
+        "damage": 100,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "158",
+    "name": "Kabuto",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "217",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Shell Attack",
+        "energyCost": {"Fighting": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "159",
+    "name": "Kabutops",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Fighting",
+    "evolutionStage": 2,
+    "evolvesFrom": "158",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Leech Life",
+        "energyCost": {"Fighting": 1},
+        "damage": 50,
+        "effect": {
+          "type": "stolenLife"
+        }
+      }
+    ],
+    "weakness": {"type": "Grass"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "160",
+    "name": "Mienfoo",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Pound",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "161",
+    "name": "Mienshao",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "160",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Spiral Kick",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "162",
+    "name": "Clobbopus",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Fighting",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Knuckle Punch",
+        "energyCost": {"Fighting": 1, "Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "163",
+    "name": "Grapploct",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Fighting",
+    "evolutionStage": 1,
+    "evolvesFrom": "162",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Knock Back",
+        "energyCost": {"Fighting": 2, "Normal": 1},
+        "damage": 70,
+        "effect": {
+          "type": "opponentActiveSwitch",
+          "choose": false
+      }
+      }
+    ],
+    "weakness": {"type": "Psychic"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "164",
+    "name": "Ekans",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bite",
+        "energyCost": {"Dark": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "165",
+    "name": "Arbok",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "164",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Corner",
+        "energyCost": {"Dark": 1, "Normal": 1},
+        "damage": 60,
+        "effect": {
+          "type": "stopOpponentRetreat"
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "166",
+    "name": "Nidoran (Female)",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Call for Family",
+        "energyCost": {"Dark": 1},
+        "damage": 0,
+        "effect": {
+          "type": "searchDeck",
+          "criteria": {"cardType": "Pokemon", "id": ["166", "169"]},
+          "quantity": 1,
+          "bench": true
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "167",
+    "name": "Nidorina",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "166",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bite",
+        "energyCost": {"Dark": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "168",
+    "name": "Nidoqueen",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Dark",
+    "evolutionStage": 2,
+    "evolvesFrom": "167",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Lovestrike",
+        "energyCost": {"Dark": 2, "Normal": 1},
+        "damage": 80,
+        "effect": {
+          "type": "benchDependent",
+          "benchType": {"id": ["171"]},
+          "amount": 50
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "169",
+    "name": "Nirdoran (Male)",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Peck",
+        "energyCost": {"Dark": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "170",
+    "name": "Nidorino",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "169",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Horn Attack",
+        "energyCost": {"Dark": 1, "Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "171",
+    "name": "Nidoking",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Dark",
+    "evolutionStage": 2,
+    "evolvesFrom": "170",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Poison Horn",
+        "energyCost": {"Dark": 2, "Normal": 1},
+        "damage": 90,
+        "effect": {
+          "type": "poison",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "172",
+    "name": "Zubat",
+    "cardType": "Pokemon",
+    "hp": 10,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Glide",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "173",
+    "name": "Golbat",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "172",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Wing Attack",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "174",
+    "name": "Grimer",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Poison Gas",
+        "energyCost": {"Dark": 1},
+        "damage": 10,
+        "effect": {
+          "type": "poison",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "175",
+    "name": "Muk",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "174",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Venoshock",
+        "energyCost": {"Dark": 2, "Normal": 1},
+        "damage": 70,
+        "effect": {
+          "type": "ifOpponentStatus",
+          "status": "poison",
+          "extraDamage": 50
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "176",
+    "name": "Koffing",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Dark",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Suffocating Gas",
+        "energyCost": {"Dark": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "177",
+    "name": "Weezing",
+    "cardType": "Pokemon",
+    "hp": 110,
+    "type": "Dark",
+    "evolutionStage": 1,
+    "evolvesFrom": "176",
+    "ability": {
+      "isActivePokemon": true,
+      "times": 1,
+      "type": "poison"
+    },
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Dark": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "178",
+    "name": "Mawile",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Metal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Crunch",
+        "energyCost": {"Metal": 1},
+        "damage": 20,
+        "effect": {
+          "type": "opponentEnergyDiscard",
+          "target": "Active",
+          "amount": 1,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "179",
+    "name": "Pawniard",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Metal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Pierce",
+        "energyCost": {"Metal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "180",
+    "name": "Bisharp",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Metal",
+    "evolutionStage": 1,
+    "evolvesFrom": "179",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Metal Claw",
+        "energyCost": {"Metal": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "181",
+    "name": "Meltan",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Metal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Amass",
+        "energyCost": {"Metal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "energyTransfer",
+          "energyType": "Metal",
+          "amount": 1,
+          "times": 1,
+          "affectedPokemon": "active"
+        }
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "182",
+    "name": "Melmetal",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Metal",
+    "evolutionStage": 1,
+    "evolvesFrom": "181",
+    "ability": {
+      "type": "takeLessDamage",
+      "amount": 20
+      },
+    "moves": [
+      {
+        "name": "Heavy Impact",
+        "energyCost": {"Metal": 3, "Normal": 1},
+        "damage": 120,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fire"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "183",
+    "name": "Dratini",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Dragon",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Ram",
+        "energyCost": {"Water": 1, "Electric": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "184",
+    "name": "Dragonair",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Dragon",
+    "evolutionStage": 1,
+    "evolvesFrom": "183",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tail Smack",
+        "energyCost": {"Water": 1, "Electric": 1, "Normal": 1},
+        "damage": 80,
+        "effect": null
+      }
+    ],
+    "weakness": {},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "185",
+    "name": "Dragonite",
+    "cardType": "Pokemon",
+    "hp": 160,
+    "type": "Dragon",
+    "evolutionStage": 2,
+    "evolvesFrom": "184",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Draco Meteor",
+        "energyCost": {"Water": 1, "Electric": 1, "Normal": 2},
+        "damage": 0,
+        "effect": {
+          "type": "opponentAnyDamaged",
+          "amount": 50,
+          "times": 4
+        }
+      }
+    ],
+    "weakness": {},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "186",
+    "name": "Pidgey",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gust",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "187",
+    "name": "Pidgeotto",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "186",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gust",
+        "energyCost": {"Normal": 1},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "188",
+    "name": "Pidgeot",
+    "cardType": "Pokemon",
+    "hp": 130,
+    "type": "Normal",
+    "evolutionStage": 2,
+    "evolvesFrom": "187",
+    "ability": {
+      "type": "opponentActiveSwitch",
+      "choose": false
+      },
+    "moves": [
+      {
+        "name": "Wing Attack",
+        "energyCost": {"Normal": 2},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "189",
+    "name": "Rattata",
+    "cardType": "Pokemon",
+    "hp": 40,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gnaw",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "190",
+    "name": "Raticate",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "189",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Bite",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "191",
+    "name": "Spearow",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Peck",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "192",
+    "name": "Fearow",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "191",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Drill Run",
+        "energyCost": {"Normal": 2},
+        "damage": 50,
+        "effect": {
+          "type": "opponentEnergyDiscard",
+          "target": "Active",
+          "amount": 1,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "193",
+    "name": "Jigglypuff",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Pound",
+        "energyCost": {"Normal": 2},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "194",
+    "name": "Wigglytuff",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "193",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "energyCost": {"Normal": 2},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "195",
+    "name": "Wigglytuff ex",
+    "cardType": "Pokemon",
+    "hp": 140,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "193",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Sleepy Song",
+        "energyCost": {"Normal": 3},
+        "damage": 80,
+        "effect": {
+          "type": "sleep",
+          "affectedPokemon": "opponentActive"
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "196",
+    "name": "Meowth",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Pay Day",
+        "energyCost": {"Normal": 1},
+        "damage": 10,
+        "effect": {
+          "type": "cardDraw",
+          "amount": 1
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "197",
+    "name": "Persian",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "196",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Shadow Claw",
+        "energyCost": {"Normal": 2},
+        "damage": 40,
+        "effect": {
+          "type": "discardCard",
+          "target": "opponentHand",
+          "amount": 1,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "198",
+    "name": "Farfetch'd",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Leek Slap",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "199",
+    "name": "Doduo",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Peck",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "200",
+    "name": "Dodrio",
+    "cardType": "Pokemon",
+    "hp": 80,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "199",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Drill Peck",
+        "energyCost": {"Normal": 1},
+        "damage": 40,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 0}
+  },
+  {
+    "id": "201",
+    "name": "Lickitung",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Continuous Lick",
+        "energyCost": {"Normal": 3},
+        "damage": 0,
+        "effect": {
+          "type": "keepFlipping",
+          "damage": 60,
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "202",
+    "name": "Chansey",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Gentle Slap",
+        "energyCost": {"Normal": 3},
+        "damage": 60,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "203",
+    "name": "Kangaskhan",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Dizzy Punch",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "opponentActiveDamaged",
+          "amount": 30,
+          "chance": 0.5,
+          "times": 2
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 3}
+  },
+  {
+    "id": "204",
+    "name": "Tauros",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Horn Attack",
+        "energyCost": {"Normal": 2},
+        "damage": 50,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "205",
+    "name": "Ditto",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Copy Anything",
+        "energyCost": {"Normal": 1},
+        "damage": 0,
+        "effect": {
+          "type": "copyAttack",
+          "needSameEnergy": true
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "206",
+    "name": "Eevee",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "209",
+    "name": "Porygon",
+    "cardType": "Pokemon",
+    "hp": 50,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": {
+      "isActivePokemon": false,
+      "type": "deckPeek",
+      "amount": 1
+    },
+    "moves": [
+      {
+        "name": "Sharpen",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "210",
+    "name": "Aerodactyl",
+    "cardType": "Pokemon",
+    "hp": 100,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "218",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Primal Wingbeat",
+        "energyCost": {"Normal": 2},
+        "damage": 0,
+        "effect": {
+          "type": "shuffleActiveDeck",
+          "chance": 0.5
+        }
+      }
+    ],
+    "weakness": {"type": "Electric"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "211",
+    "name": "Snorlax",
+    "cardType": "Pokemon",
+    "hp": 150,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Rollout",
+        "energyCost": {"Normal": 4},
+        "damage": 70,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 4}
+  },
+  {
+    "id": "212",
+    "name": "Minccino",
+    "cardType": "Pokemon",
+    "hp": 60,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tail Smack",
+        "energyCost": {"Normal": 1},
+        "damage": 20,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "213",
+    "name": "Cinccino",
+    "cardType": "Pokemon",
+    "hp": 90,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "212",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Do the Wave",
+        "energyCost": {"Normal": 3},
+        "damage": 0,
+        "effect": {
+          "type": "benchDependent",
+          "benchType": "any",
+          "amount": 30
+        }
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "214",
+    "name": "Wooloo",
+    "cardType": "Pokemon",
+    "hp": 70,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "ability": null,
+    "moves": [
+      {
+        "name": "Tackle",
+        "energyCost": {"Normal": 2},
+        "damage": 30,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 1}
+  },
+  {
+    "id": "215",
+    "name": "Dubwool",
+    "cardType": "Pokemon",
+    "hp": 120,
+    "type": "Normal",
+    "evolutionStage": 1,
+    "evolvesFrom": "214",
+    "ability": null,
+    "moves": [
+      {
+        "name": "Rolling Tackle",
+        "energyCost": {"Normal": 3},
+        "damage": 80,
+        "effect": null
+      }
+    ],
+    "weakness": {"type": "Fighting"},
+    "retreat": {"Normal": 2}
+  },
+  {
+    "id": "216",
+    "name": "Helix Fossil",
+    "cardType": "Trainer",
+    "trainerType": "playableItem",
+    "hp": 40,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "retreat": "cannot",
+    "discardable": true
+  },
+  {
+    "id": "217",
+    "name": "Dome Fossil",
+    "cardType": "Trainer",
+    "trainerType": "playableItem",
+    "hp": 40,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "retreat": "cannot",
+    "discardable": true
+  },
+  {
+    "id": "218",
+    "name": "Old Amber",
+    "cardType": "Trainer",
+    "trainerType": "playableItem",
+    "hp": 40,
+    "type": "Normal",
+    "evolutionStage": 0,
+    "retreat": "cannot",
+    "discardable": true
+  },
+  {
+    "id": "219",
+    "name": "Erika",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "heal",
+      "amount": 50,
+      "type": "Grass",
+      "affectedPokemon": 1
+    }
+  },
+  {
+    "id": "220",
+    "name": "Misty",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "keepFlipping",
+      "energy": "Water",
+      "chance": 0.5,
+      "type": "Water",
+      "affectedPokemon": 1
+    }
+  },
+  {
+    "id": "221",
+    "name": "Blaine",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "extraDamage",
+      "targets": {"id": ["038", "043", "044"]},
+      "damageAmount": 30
+    }
+  },
+  {
+    "id": "222",
+    "name": "Koga",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "returnActive",
+      "targets": {"id": ["175", "177"]}
+    }
+  },
+  {
+    "id": "223",
+    "name": "Giovanni",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "extraDamage",
+      "targets": "all",
+      "damageAmount": 10
+    }
+  },
+  {
+    "id": "224",
+    "name": "Brock",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "energyTransfer",
+      "energyType": "Fighting",
+      "amount": 1,
+      "target": {"id": ["149", "150"]}
+    }
+  },
+  {
+    "id": "225",
+    "name": "Sabrina",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "opponentActiveSwitch",
+      "canChoose": false
+    }
+  },
+  {
+    "id": "226",
+    "name": "Lt. Surge",
+    "cardType": "Trainer",
+    "trainerType": "Supporter",
+    "ability": {
+      "type": "fromPokemonEnergyTransfer",
+      "target": {
+        "targetType": "active",
+        "id": ["095", "100", "101"]
+      },
+      "energyTypeTransfered": "Electric"
+    }
+  }
+]
