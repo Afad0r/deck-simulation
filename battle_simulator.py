@@ -43,10 +43,14 @@ class Pokemon:
         
         if defender.current_hp < 0:
             defender.current_hp = 0
+            Pokemon.PokemonFaint(defender)
         
         return
     
-    # A function for adding energies to a Pokemon.
+    def PokemonFaint(pokemon):
+        return
+    
+    # A function for adding energy to a Pokemon.
     def AttachEnergy(self, energy_type, amount):
         if energy_type in self.attached_energy:
             self.attached_energy[energy_type] += amount
@@ -106,6 +110,8 @@ class Player:
         self.active_pokemon = None
         self.bench_pokemon = []
         self.turn = False
+        self.energy_generated = None
+        self.points = 0
     
     # Shuffles the deck into a randomised order.
     def DeckShuffle(self):
@@ -182,9 +188,7 @@ class Player:
 def GameBegin(player1, player2):
     # Determines starting hands.
     Player.StartDeckDraw(player1)
-    print("P1", player1.hand)
     Player.StartDeckDraw(player2)
-    print("P2", player2.hand)
     
     # Determines who goes first.
     coin = random.randint(0, 1)
@@ -197,6 +201,120 @@ def GameBegin(player1, player2):
 
 # Creates a function to be run at the beginning for each player to play the first active Pokemon.
 def PokemonActive(player, pokemon):
+    deck_lookup = {card["id"]: card for card in cardPool}
+    if(deck_lookup[pokemon].get("cardType") == "Pokemon") & (deck_lookup[pokemon].get("evolutionStage") == 0):
+        player.hand.remove(pokemon)
+        player.active_pokemon = Pokemon(deck_lookup.get(pokemon))
+    else:
+        print("F@AB")
+    
+    return
+
+def EnergyZoneGeneration(player):
+    player.energy_generated = random.choice(player.energy_zone)
+    
+    return
+
+points_needed = 3 # how many points are needed to be scored to win a match
+
+# What will actually happen when each battle begins and is processed.
+def Battle(player1, player2):
+    turn = 1
+    
+    GameBegin(player1, player2)
+    
+    # Puts a basic pokemon in the active spot.
+    looking1 = True
+    while looking1:
+        # Checks for the basic Pokemon.
+        hand_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
+        for card_id in player1.hand:
+            if(hand_lookup[card_id].get("evolutionStage") == 0): # checks if the hand contains a basic Pokemon
+                potentialactive1 = card_id
+                looking1 = False # in order to stop the while loop
+                break
+    
+    # Puts a basic pokemon in the active spot.
+    looking2 = True
+    while looking2:
+        # Checks for the basic Pokemon.
+        hand_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
+        for card_id in player2.hand:
+            if(hand_lookup[card_id].get("evolutionStage") == 0): # checks if the hand contains a basic Pokemon
+                potentialactive2 = card_id
+                looking2 = False # in order to stop the while loop
+                break
+    
+    PokemonActive(player1, potentialactive1)
+    PokemonActive(player2, potentialactive2)
+    
+    # These are set to the inverse as the while loop will swap positions.
+    if player1.turn == True:
+        offender = player2
+        defender = player1
+    else:
+        offender = player1
+        defender = player2
+    
+    # Temporary test, just does a run through of the entire battle and what is meant to happen.
+    battleWon = False
+    while not battleWon:
+        p = offender
+        offender = defender
+        defender = p
+        
+        # What happens every turn.
+        Player.DeckDraw(offender, 1)
+        if turn != 1:
+            EnergyZoneGeneration(offender)
+            Pokemon.AttachEnergy(offender.active_pokemon, offender.energy_generated, 1)
+            offender.energy_generated = None
+        
+        # Chooses the first damaging move and uses it.
+        for move in offender.active_pokemon.moves:
+            if move.get("damage") > 0:
+                Pokemon.PokemonDamage(offender.active_pokemon, defender.active_pokemon, move.get("damage"))
+        
+        # Attributes points depending on if the defeating Pokemon was an ex or not.
+        if defender.active_pokemon.current_hp <= 0:
+            if defender.active_pokemon.name.endswith(" ex"):
+                offender.points += 2
+            else:
+                offender.points += 1
+            
+            defender.discard_pile.append(defender.active_pokemon.id)
+            defender.active_pokemon = None
+        
+        # Substitutes the old active -which is now discarded- with a new active Pokemon.
+        if defender.active_pokemon == None:
+            promoted = False
+            
+            # Checks for the basic Pokemon.
+            hand_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
+            for card_id in defender.hand:
+                if(hand_lookup[card_id].get("evolutionStage") == 0): # checks for a basic Pokemon
+                    PokemonActive(defender, card_id)
+                    promoted = True
+                    break
+            if not promoted:
+                print(offender.active_pokemon.name, "Won")
+                print(turn)
+                return
+        
+        # To prevent infinite games.
+        if turn == 20:
+            print("Battle Drawn")
+            print(turn)
+            return
+        
+        # Checks if win condition (getting three points) is complete.
+        if offender.points >= 3:
+            print(offender.active_pokemon.name, " Won")
+            print(turn)
+            return
+        
+        turn += 1
+    
     return
 
 test = ["168", "002", "003", "003", "004", "004", "006", "006", "007", "007",
@@ -208,41 +326,57 @@ energy2 = ["Grass", "Water", "Fire"]
 player1 = Player(test, energy)
 player2 = Player(test, energy)
 
-
-GameBegin(player1, player2)
-print(player1.turn, "|", player2.turn)
-
-card_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
-
-player1pokemon = []
-player1pokemon = [Pokemon(card_lookup[card]) for card in player1.deck]
-
-print(player1.hand)
-
 print(player1.__dict__)
+print(player2.__dict__)
+Battle(player1, player2)
+print(player1.__dict__)
+print(player2.__dict__)
 
 
-# test charizard and blastoise
-charizard = Pokemon(card_lookup["035"])
-blastoise = Pokemon(card_lookup["055"])
+# print(player1.turn, "|", player2.turn)
 
-print(charizard.attached_energy)
-Pokemon.AttachEnergy(charizard, "Grass", 3)
-Pokemon.AttachEnergy(charizard, "Fire", 3)
-print(charizard.attached_energy)
-Pokemon.RemoveEnergy(charizard, 2)
-Pokemon.RemoveEnergy(charizard, 2, "Fire")
-Pokemon.RemoveEnergy(charizard, 2)
-print(charizard.attached_energy)
+# card_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
 
-print(charizard.status_condition)
-Pokemon.AddStatus(charizard, "Sleep")
-print(charizard.status_condition)
-Pokemon.AddStatus(charizard, "Paralyse")
-print(charizard.status_condition)
-Pokemon.AddStatus(charizard, "Sleep")
-print(charizard.status_condition)
-Pokemon.RemoveStatus(charizard, "Sleep")
-print(charizard.status_condition)
-Pokemon.RemoveStatus(charizard, "Paralyse")
-print(charizard.status_condition)
+# player1pokemon = []
+# player1pokemon = [Pokemon(card_lookup[card]) for card in player1.deck]
+
+# print(player1.hand)
+
+# print(player1.__dict__)
+
+
+# # test charizard and blastoise and also charmander now... yay!
+# charizard = Pokemon(card_lookup["035"])
+# blastoise = Pokemon(card_lookup["055"])
+# charmander = Pokemon(card_lookup["033"])
+
+# player1.hand.append("033")
+
+# print(charizard.attached_energy)
+# Pokemon.AttachEnergy(charizard, "Grass", 3)
+# Pokemon.AttachEnergy(charizard, "Fire", 3)
+# print(charizard.attached_energy)
+# Pokemon.RemoveEnergy(charizard, 2)
+# Pokemon.RemoveEnergy(charizard, 2, "Fire")
+# Pokemon.RemoveEnergy(charizard, 2)
+# print(charizard.attached_energy)
+
+# print(charizard.status_condition)
+# Pokemon.AddStatus(charizard, "Sleep")
+# print(charizard.status_condition)
+# Pokemon.AddStatus(charizard, "Paralyse")
+# print(charizard.status_condition)
+# Pokemon.AddStatus(charizard, "Sleep")
+# print(charizard.status_condition)
+# Pokemon.RemoveStatus(charizard, "Sleep")
+# print(charizard.status_condition)
+# Pokemon.RemoveStatus(charizard, "Paralyse")
+# print(charizard.status_condition)
+
+# print(player1.hand)
+# print(player1.active_pokemon)
+# PokemonActive(player1, "033")
+# print(player1.hand)
+# print(player1.active_pokemon.name)
+# print(player1.active_pokemon.__dict__)
+# print(player1.__dict__)
