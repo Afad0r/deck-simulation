@@ -24,4 +24,4 @@ Simple Python application which simulates battles in a replicated Pokémon TCG P
 - Add evolution timing -cannot evolve if evolved or became active Pokemon this turn.
 - Add bench Pokemon implementation fully.
 - Add special cards and abilities.
-
+- Add algorithmic move choosing and whatnot, so the algorithm will appear to think about what move it will take on each turn.
