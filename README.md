@@ -17,11 +17,11 @@ Simple Python application which simulates battles in a replicated Pokémon TCG P
 - Does not use moves that are non-damaging, or account for each move's special effect.
 - Does not use abilities.
 - Trainer cards do not work.
-- Evolutions are not implemented.
-- Only one active Pokemon, no bench Pokemon are currently allowed.
+- Evolved Pokemon evolve instantly if evolved form is in hand for active Pokemon.
+- Bench system is only in semi-development, the hand serving as the bench. This means that the algorithm cannot attach energy to the benched Pokemon.
 
 # Future Aims:
-- Add evolution support.
-- Add bench Pokemon.
+- Add evolution timing -cannot evolve if evolved or became active Pokemon this turn.
+- Add bench Pokemon implementation fully.
 - Add special cards and abilities.
 
