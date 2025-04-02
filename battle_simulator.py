@@ -287,7 +287,7 @@ def RecordCurrentGameState(player1, player2, turn, result, winner = None):
 def NumberOfMutatedCards(deck, cardPool, n):
     for i in range(1000): # high range is only here to prevent infinity looping
         shadow_deck = Player(deck.deck[:], deck.energy_zone[:])
-        for i in range(n):
+        for j in range(n):
             shadow_deck.deck.pop(random.randrange(len(shadow_deck.deck)))
         new_deck_ids = [card["id"] for card in random.choices(cardPool, k = n)]
         shadow_deck.deck.extend(new_deck_ids)
@@ -451,6 +451,21 @@ def Battle(player1, player2):
             EnergyZoneGeneration(offender)
             Pokemon.AttachEnergy(offender.active_pokemon, offender.energy_generated, 1)
             offender.energy_generated = None
+        
+        # Check if evolution possible, and evolve.
+        hand_lookup = {card["id"]: card for card in cardPool}
+        for card_id in offender.hand:
+            if hand_lookup[card_id].get("evolvesFrom") == offender.active_pokemon.id:
+                reduced_hp = offender.active_pokemon.max_hp - offender.active_pokemon.current_hp
+                attached_energy = offender.active_pokemon.attached_energy
+                status_condition = offender.active_pokemon.status_condition
+                
+                offender.hand.remove(card_id)
+                offender.active_pokemon = Pokemon(hand_lookup.get(card_id))
+                
+                offender.active_pokemon.current_hp = offender.active_pokemon.max_hp - reduced_hp
+                offender.active_pokemon.attached_energy = attached_energy
+                offender.active_pokemon.status_condition = status_condition
         
         # Chooses the first damaging move and uses it.
         for move in offender.active_pokemon.moves:
