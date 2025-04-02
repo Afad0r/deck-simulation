@@ -1,5 +1,5 @@
 # This program simulates battles between different decks.
-# The decks are composed of card from Pokemon TCG Pocket.
+# The decks are composed of cards from Pokemon TCG Pocket.
 
 import json
 import collections
@@ -20,7 +20,7 @@ class Pokemon:
     def __init__(self, card_data):
         self.id = card_data["id"]
         self.name = card_data["name"]
-        if (card_data["cardType"] == "Pokemon") | (card_data.get("trainerType") == "playableItem"):
+        if (card_data["cardType"] == "Pokemon") or (card_data.get("trainerType") == "playableItem"):
             self.max_hp = card_data["hp"]
             self.current_hp = card_data["hp"] # the current hp of the Pokemon (which is initialised as its maximum)
             self.type = card_data["type"]
@@ -53,14 +53,13 @@ class Pokemon:
     
     # A function for whenever a Pokemon takes damage.
     def PokemonDamage(offender, defender, damage):
-        if offender.type == defender.weakness["type"]:
+        if defender.weakness and offender.type == defender.weakness["type"]:
             defender.current_hp -= damage + 20
         else:
             defender.current_hp -= damage
         
         if defender.current_hp < 0:
             defender.current_hp = 0
-            Pokemon.PokemonFaint(defender)
         
         return
     
@@ -97,7 +96,7 @@ class Pokemon:
     def HealPokemon(self, amount):
         self.current_hp += amount
         
-        if self.currrent_hp > self.max_hp:
+        if self.current_hp > self.max_hp:
             self.current_hp = self.max_hp
         
         return
@@ -199,7 +198,7 @@ class Player:
         # Rule 3: Deck must contain at least 1 basic Pokemon.
         deck_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the deck cards
         for card_id in deck_ids:
-            if(deck_lookup[card_id].get("cardType") == "Pokemon") & (deck_lookup[card_id].get("evolutionStage") == 0): # is this card a basic pokemon
+            if(deck_lookup[card_id].get("cardType") == "Pokemon") and (deck_lookup[card_id].get("evolutionStage") == 0): # is this card a basic pokemon
                 break
         else:
             print("F@B") # failure at containing a basic Pokemon
@@ -230,7 +229,7 @@ def GameBegin(player1, player2):
 # Creates a function to be run at the beginning for each player to play the first active Pokemon.
 def PokemonActive(player, pokemon):
     deck_lookup = {card["id"]: card for card in cardPool}
-    if(deck_lookup[pokemon].get("cardType") == "Pokemon") & (deck_lookup[pokemon].get("evolutionStage") == 0):
+    if(deck_lookup[pokemon].get("cardType") == "Pokemon") and (deck_lookup[pokemon].get("evolutionStage") == 0):
         player.hand.remove(pokemon)
         player.active_pokemon = Pokemon(deck_lookup.get(pokemon))
     else:
@@ -253,7 +252,6 @@ def CanUseMove(pokemon, move):
     for energy_type, cost in required.items():
         if energy_type != "Normal":
             if attached.get(energy_type, 0) < cost:
-                print("Can't use move.")
                 return False
             attached[energy_type] -= cost
     
@@ -267,7 +265,9 @@ def CanUseMove(pokemon, move):
     return True
 
 # Creates a log of the current game state for neural network training at a later date.
-def RecordCurrentGameState(player1, player2, turn, result):
+# Currently logs are not recorded as it would be counter-productive this early on, however the ability to do so is here.
+# This function currently is used to detect which player won the match.
+def RecordCurrentGameState(player1, player2, turn, result, winner = None):
     if player1.startplayer == False:
         p = player1
         player1 = player2
@@ -277,10 +277,119 @@ def RecordCurrentGameState(player1, player2, turn, result):
         "turn": turn,
         "player1": player1.to_dict(),
         "player2": player2.to_dict(),
-        "result": result
+        "result": result,
+        "winner": winner
         }
     
     return state
+
+# A supporting function for Mutate(), changes the cards randomly to other cards.
+def NumberOfMutatedCards(deck, cardPool, n):
+    for i in range(1000): # high range is only here to prevent infinity looping
+        shadow_deck = Player(deck.deck[:], deck.energy_zone[:])
+        for i in range(n):
+            shadow_deck.deck.pop(random.randrange(len(shadow_deck.deck)))
+        new_deck_ids = [card["id"] for card in random.choices(cardPool, k = n)]
+        shadow_deck.deck.extend(new_deck_ids)
+        
+        if Player.DeckValidation(shadow_deck):
+            winrate = DeckEvaluation(shadow_deck, cardPool, 10, deck)
+            if winrate > 50:
+                return shadow_deck
+            else:
+                continue
+    
+    return deck
+
+# This mutates the deck to swap out cards until it gets a better deck, the amount swapped out is determined by winrate.
+def Mutate(deck, winrate, cardPool):
+    if winrate == 100:
+        return deck
+    elif winrate >= 75:
+        deck = NumberOfMutatedCards(deck, cardPool, 4)
+    elif winrate >= 50:
+        deck = NumberOfMutatedCards(deck, cardPool, 8)
+    elif winrate >= 25:
+        deck = NumberOfMutatedCards(deck, cardPool, 12)
+    else:
+        deck = NumberOfMutatedCards(deck, cardPool, 16)
+    return deck
+
+# Creates a random deck with a random energy_pool, this is used to provide the nueral network with immediate/easy/unsure of what word to use here data.
+def GenerateRandomDecks(cardPool, size = 1):
+    decks = []
+    
+    while len(decks) < size:
+        deck_ids = [card["id"] for card in random.choices(cardPool, k = 20)]
+        energy_zone = random.choices(["Grass", "Fire", "Water", "Electric", "Psychic", "Fighting", "Dark", "Metal"], k = random.randint(1, 3))
+        player = Player(deck_ids, energy_zone)
+        if player.DeckValidation() == True:
+            if size == 1:
+                return player
+            elif size > 1:
+                decks.append(player)
+    
+    return decks
+
+# Evaluates each deck by making it battle random decks.
+def DeckEvaluation(deck, cardPool, n = 10, deck2 = None):
+    wins = 0
+    
+    for i in range(n):
+        if deck2 != None:
+            mutated_deck = Player(deck.deck[:], deck.energy_zone[:])
+            original_deck = Player(deck2.deck[:], deck2.energy_zone[:])
+            
+            log = Battle(mutated_deck, original_deck)
+        else:
+            evaluating_deck = Player(deck.deck[:], deck.energy_zone[:])
+            random_opponent = GenerateRandomDecks(cardPool)
+        
+            log = Battle(evaluating_deck, random_opponent)
+        
+        if log[-1]["winner"] == "player1":
+            wins += 1
+            print(wins)
+    
+    winrate = (wins / n) * 100
+    if winrate >= 0.2 * 100:
+        print("Good Deck.")
+        print("Win Rate is {}%.".format(winrate))
+    
+    return winrate
+
+# Creates generations that begin with 2^n (number of generations), this is a sort of lastman standing type of elimination of the worst decks.
+def Generations(generations, cardPool):
+    decks_generated = GenerateRandomDecks(cardPool, pow(2, generations))
+    
+    for i in range(generations):
+        winrates = []
+        
+        for j in range(len(decks_generated)):
+            winrates.append(DeckEvaluation(decks_generated[j], cardPool))
+        
+        range_for_k = int(len(decks_generated) / 2)
+        for k in range(range_for_k):
+            if winrates[k + 1] < winrates[k]:
+                decks_generated[k] = Mutate(decks_generated[k], winrates[k], cardPool)
+                
+                decks_generated.pop(k + 1)
+                winrates.pop(k + 1)
+            elif winrates[k + 1] > winrates[k]:
+                decks_generated[k + 1] = Mutate(decks_generated[k + 1], winrates[k + 1], cardPool)
+                
+                decks_generated.pop(k)
+                winrates.pop(k)
+            elif winrates[k + 1] == winrates[k]: # as one of them have to be done away with I decided to get rid of [k + 1]
+                decks_generated[k] = Mutate(decks_generated[k], winrates[k], cardPool)
+                
+                decks_generated.pop(k + 1)
+                winrates.pop(k + 1)
+    
+    print(decks_generated)
+    print(winrates)
+    return decks_generated[0]
+        
 
 # What will actually happen when each battle begins and is processed.
 def Battle(player1, player2):
@@ -329,6 +438,13 @@ def Battle(player1, player2):
         offender = defender
         defender = p
         
+        # In case no basic Pokemon replacement was found for some reason
+        if (offender.active_pokemon == None) or (defender.active_pokemon == None):
+            battle_log.append(RecordCurrentGameState(defender, offender, turn, "win/lose"))
+            print("Something Happened @ not battleWon beginning")
+            print(turn - 1)
+            return battle_log
+            
         # What happens every turn.
         Player.DeckDraw(offender, 1)
         if turn != 1:
@@ -363,13 +479,21 @@ def Battle(player1, player2):
                     promoted = True
                     break
             if not promoted:
-                battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose"))
+                if id(offender) == id(player1):
+                    winner = "player1"
+                elif id(defender) == id(player1):
+                    winner = "player2"
+                battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose", winner))
                 print(offender.active_pokemon.name, "Won")
                 print(turn)
                 return battle_log
+            else:
+                battle_log.append(RecordCurrentGameState(offender, defender, turn, "continued after promotion"))
+                turn += 1
+                continue
         
         # To prevent infinite games.
-        if turn == 20:
+        if turn == 50:
             battle_log.append(RecordCurrentGameState(offender, defender, turn, "draw"))
             print("Battle Drawn")
             print(turn)
@@ -377,7 +501,11 @@ def Battle(player1, player2):
         
         # Checks if win condition (getting three points) is complete.
         if offender.points >= 3:
-            battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose"))
+            if id(offender) == id(player1):
+                winner = "player1"
+            elif id(defender) == id(player1):
+                winner = "player2"
+            battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose", winner))
             print(offender.active_pokemon.name, "Won")
             print(turn)
             return battle_log
@@ -388,73 +516,23 @@ def Battle(player1, player2):
     
     return battle_log
 
-test = ["168", "002", "003", "003", "004", "004", "006", "006", "007", "007",
+test = ["047", "047", "003", "003", "004", "004", "006", "006", "007", "007",
         "009", "169", "010", "010", "012", "012", "005", "013", "226", "226"]
 test2 = ["001", "002", "003", "003", "004", "004", "006", "006", "007", "007",
         "009", "169", "010", "010", "012", "012", "013", "013", "226", "226"]
-energy = ["Grass", "Water", "Fire"]
+energy = ["Fire"]
 energy2 = ["Grass", "Water", "Fire"]
-player1 = Player(test, energy)
-player2 = Player(test, energy)
 
-print(player1.__dict__)
-print(player2.__dict__)
-log = Battle(player1, player2)
-print(log)
+tester_deck = Player(test, energy)
 
-# Writes the battle log to a file to look at later if needed.
-with open("battle_logs.json", "a") as f:
-    json.dump(log, f, indent = 2)
+DeckEvaluation(tester_deck, cardPool)
+
+top_deck = Generations(5, cardPool)
+
+print("Before:", tester_deck.deck)
+tester_deck = Mutate(tester_deck, 55, cardPool)
+print("After:", tester_deck.deck)
+
+with open("top_decks.json", "a") as f:
+    json.dump(top_deck.to_dict(), f, indent = 2)
     f.write("\n")
-
-print(player1.__dict__)
-print(player2.__dict__)
-
-
-# print(player1.startplayer, "|", player2.startplayer)
-
-# card_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
-
-# player1pokemon = []
-# player1pokemon = [Pokemon(card_lookup[card]) for card in player1.deck]
-
-# print(player1.hand)
-
-# print(player1.__dict__)
-
-
-# # test charizard and blastoise and also charmander now... yay!
-# charizard = Pokemon(card_lookup["035"])
-# blastoise = Pokemon(card_lookup["055"])
-# charmander = Pokemon(card_lookup["033"])
-
-# player1.hand.append("033")
-
-# print(charizard.attached_energy)
-# Pokemon.AttachEnergy(charizard, "Grass", 3)
-# Pokemon.AttachEnergy(charizard, "Fire", 3)
-# print(charizard.attached_energy)
-# Pokemon.RemoveEnergy(charizard, 2)
-# Pokemon.RemoveEnergy(charizard, 2, "Fire")
-# Pokemon.RemoveEnergy(charizard, 2)
-# print(charizard.attached_energy)
-
-# print(charizard.status_condition)
-# Pokemon.AddStatus(charizard, "Sleep")
-# print(charizard.status_condition)
-# Pokemon.AddStatus(charizard, "Paralyse")
-# print(charizard.status_condition)
-# Pokemon.AddStatus(charizard, "Sleep")
-# print(charizard.status_condition)
-# Pokemon.RemoveStatus(charizard, "Sleep")
-# print(charizard.status_condition)
-# Pokemon.RemoveStatus(charizard, "Paralyse")
-# print(charizard.status_condition)
-
-# print(player1.hand)
-# print(player1.active_pokemon)
-# PokemonActive(player1, "033")
-# print(player1.hand)
-# print(player1.active_pokemon.name)
-# print(player1.active_pokemon.__dict__)
-# print(player1.__dict__)
