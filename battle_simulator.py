@@ -34,6 +34,23 @@ class Pokemon:
         elif card_data["trainerType"] == "Supporter":
             self.ability = card_data["ability"] # the card's effect
     
+    # Dictionary that can be put into json files.
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "max_hp": self.max_hp,
+            "current_hp": self.current_hp,
+            "type": self.type,
+            "evolution_stage": self.evolution_stage,
+            "ability": self.ability,
+            "moves": self.moves,
+            "weakness": self.weakness,
+            "retreat": self.retreat,
+            "attached_energy": self.attached_energy,
+            "status_condition": self.status_condition
+            }
+    
     # A function for whenever a Pokemon takes damage.
     def PokemonDamage(offender, defender, damage):
         if offender.type == defender.weakness["type"]:
@@ -45,9 +62,6 @@ class Pokemon:
             defender.current_hp = 0
             Pokemon.PokemonFaint(defender)
         
-        return
-    
-    def PokemonFaint(pokemon):
         return
     
     # A function for adding energy to a Pokemon.
@@ -109,9 +123,23 @@ class Player:
         self.energy_zone = energy_zone[:] # transfers the energies
         self.active_pokemon = None
         self.bench_pokemon = []
-        self.turn = False
+        self.startplayer = False
         self.energy_generated = None
         self.points = 0
+    
+    # Dictionary that can be put into json files.
+    def to_dict(self):
+        return {
+            "deck": self.deck,
+            "hand": self.hand,
+            "discard_pile": self.discard_pile,
+            "energy_zone": self.energy_zone,
+            "active_pokemon": self.active_pokemon.to_dict() if self.active_pokemon else None,
+            "bench_pokemon": [poke.to_dict() for poke in self.bench_pokemon],
+            "startplayer": self.startplayer,
+            "energy_generated": self.energy_generated,
+            "points": self.points
+            }
     
     # Shuffles the deck into a randomised order.
     def DeckShuffle(self):
@@ -193,9 +221,9 @@ def GameBegin(player1, player2):
     # Determines who goes first.
     coin = random.randint(0, 1)
     if coin == 1:
-        player1.turn = True
+        player1.startplayer = True
     elif coin == 0:
-        player2.turn = True
+        player2.startplayer = True
     
     return
 
@@ -210,15 +238,53 @@ def PokemonActive(player, pokemon):
     
     return
 
+# Generates a randomised energy from the energies present in the energy zone.
 def EnergyZoneGeneration(player):
     player.energy_generated = random.choice(player.energy_zone)
     
     return
 
-points_needed = 3 # how many points are needed to be scored to win a match
+# Checks if the Pokemon in question can use a certain move and has the prerequist energies attached.
+def CanUseMove(pokemon, move):
+    required = move["energyCost"]
+    attached = pokemon.attached_energy.copy()
+    
+    # Checks if the required amount for each energy is present.
+    for energy_type, cost in required.items():
+        if energy_type != "Normal":
+            if attached.get(energy_type, 0) < cost:
+                print("Can't use move.")
+                return False
+            attached[energy_type] -= cost
+    
+    normal_energy_cost = required.get("Normal", 0)
+    total_left = sum(attached.values())
+    
+    # As normal energy is not an actual energy it checks it's cost against all remaining energies.
+    if normal_energy_cost > total_left:
+        return False
+    
+    return True
+
+# Creates a log of the current game state for neural network training at a later date.
+def RecordCurrentGameState(player1, player2, turn, result):
+    if player1.startplayer == False:
+        p = player1
+        player1 = player2
+        player2 = p
+    
+    state = {
+        "turn": turn,
+        "player1": player1.to_dict(),
+        "player2": player2.to_dict(),
+        "result": result
+        }
+    
+    return state
 
 # What will actually happen when each battle begins and is processed.
 def Battle(player1, player2):
+    battle_log = [] # a log for the battle that will happen
     turn = 1
     
     GameBegin(player1, player2)
@@ -249,7 +315,7 @@ def Battle(player1, player2):
     PokemonActive(player2, potentialactive2)
     
     # These are set to the inverse as the while loop will swap positions.
-    if player1.turn == True:
+    if player1.startplayer == True:
         offender = player2
         defender = player1
     else:
@@ -272,7 +338,7 @@ def Battle(player1, player2):
         
         # Chooses the first damaging move and uses it.
         for move in offender.active_pokemon.moves:
-            if move.get("damage") > 0:
+            if move.get("damage") > 0 and CanUseMove(offender.active_pokemon, move):
                 Pokemon.PokemonDamage(offender.active_pokemon, defender.active_pokemon, move.get("damage"))
         
         # Attributes points depending on if the defeating Pokemon was an ex or not.
@@ -297,25 +363,30 @@ def Battle(player1, player2):
                     promoted = True
                     break
             if not promoted:
+                battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose"))
                 print(offender.active_pokemon.name, "Won")
                 print(turn)
-                return
+                return battle_log
         
         # To prevent infinite games.
         if turn == 20:
+            battle_log.append(RecordCurrentGameState(offender, defender, turn, "draw"))
             print("Battle Drawn")
             print(turn)
-            return
+            return battle_log
         
         # Checks if win condition (getting three points) is complete.
         if offender.points >= 3:
-            print(offender.active_pokemon.name, " Won")
+            battle_log.append(RecordCurrentGameState(offender, defender, turn, "win/lose"))
+            print(offender.active_pokemon.name, "Won")
             print(turn)
-            return
+            return battle_log
+        
+        battle_log.append(RecordCurrentGameState(offender, defender, turn, "ongoing"))
         
         turn += 1
     
-    return
+    return battle_log
 
 test = ["168", "002", "003", "003", "004", "004", "006", "006", "007", "007",
         "009", "169", "010", "010", "012", "012", "005", "013", "226", "226"]
@@ -328,12 +399,19 @@ player2 = Player(test, energy)
 
 print(player1.__dict__)
 print(player2.__dict__)
-Battle(player1, player2)
+log = Battle(player1, player2)
+print(log)
+
+# Writes the battle log to a file to look at later if needed.
+with open("battle_logs.json", "a") as f:
+    json.dump(log, f, indent = 2)
+    f.write("\n")
+
 print(player1.__dict__)
 print(player2.__dict__)
 
 
-# print(player1.turn, "|", player2.turn)
+# print(player1.startplayer, "|", player2.startplayer)
 
 # card_lookup = {card["id"]: card for card in cardPool} # creates a dictionary of the hand cards
 
